@@ -1,21 +1,23 @@
 <?php
 mysqli_report(MYSQLI_REPORT_OFF);
 
-
 if(strlen($_POST["password"]) < 8)
 {
-  die("Password must be at least 8 characters long. Please go back to continue.");
+  die("Password must be at least 8 characters");
 }
-
 
 if(!preg_match("/[0-9]/i", $_POST["password"]))
 {
   die("Password must contain a number. Please go back to continue.");
 }
 
+if(!preg_match("/[a-z]/i", $_Post["password"])){
+  die("password must contain at least 1 letter");
+}
+
 if($_POST["password"] !== $_POST["confirm_password"])
 {
-  die("Password and confirm password must match. Please go back to continue.");
+  die("confirm password isn't equal to password enter it again");
 }
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -35,5 +37,4 @@ if($stmt->execute())
   header("Location: signup_success.php");
   exit;
 }
-
 ?>
