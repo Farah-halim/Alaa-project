@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    align-items: center; 
+  }
+  
+.text {
+    margin-left: 90px; /* Adjust margin as needed */
+    color: #0a8bf5;
+    font-weight: 600;
+    font-size: 50px;
+  }
+a{
+    text-decoration: none;
+    color: #2151a3;
+}
