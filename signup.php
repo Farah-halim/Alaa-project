@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="form-photo">
-                    <img src="images/loading1.gif" alt="">
+                    <img src="images/loading1.gif">
                 </div>
         </div>
     </div> 

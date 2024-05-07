@@ -12,26 +12,15 @@ if(isset($_SESSION["user_id"]))
 
 <!DOCTYPE html>
 <html>
-
 <head>
   <title> Home Page</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/home.css">
 </head>
-
 <body>
   <h1> Home Page </h1>
-
-  <?php if(isset($user)): ?>
-    <p> Hello, <?= htmlspecialchars($user["username"]); ?>. You are now logged In.</p>
-
-    <p><a href="logout.php">LogOut</a></p>
-
-  <?php else: ?>
-    <p><a href="login.php">LogIn</a> or <a href="signup.php">SignUp</a></p>
-    
-  <?php endif; ?>
+  <p><a href="logout.php">LogOut</a></p>
 
 </body>
 </html>
