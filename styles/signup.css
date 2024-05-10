@@ -48,7 +48,7 @@
     border: 1px solid rgb(0 143 211);
     transition: 0.5s;
 }
-.btn-contact {
+.sumbit {
     width: 120px;
     height: 40px;
     border-radius: 5px;
@@ -61,7 +61,7 @@
     border: 1px solid rgb(0, 144, 211, 0.719);
     cursor: pointer;
 } 
-.btn-contact:hover{
+.sumbit:hover{
     background-color: #ffffff;
     color: rgb(0, 144, 211, 0.719);
     transition: 0.9s ;

@@ -1,40 +1,36 @@
 <?php
-mysqli_report(MYSQLI_REPORT_OFF);
+include("database.php");
+$check_error = 0;
 
-if(strlen($_POST["password"]) < 8)
-{
-  die("Password must be at least 8 characters");
-}
+if (isset($_POST['submit'])) {
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
 
-if(!preg_match("/[0-9]/i", $_POST["password"]))
-{
-  die("Password must contain a number. Please go back to continue.");
-}
+    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
+        echo "You should fill them out";
+        $check_error = 1;
+    }
 
-if(!preg_match("/[a-z]/i", $_Post["password"])){
-  die("password must contain at least 1 letter");
-}
+    if (strlen($_POST["password"]) < 8) {
+        die("Password must be at least 8 characters long. Please go back to continue.");
+        $check_error = 1;
+    }
 
-if($_POST["password"] !== $_POST["confirm_password"])
-{
-  die("confirm password isn't equal to password enter it again");
-}
+    if ($_POST["password"] !== $_POST["confirm_password"]) {
+        die("Password and confirm password must match. Please go back to continue.");
+        $check_error = 1;
+    }
 
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-$mysqli = require __DIR__ . "/database.php";
-$sql = "INSERT INTO user (username, email, password_hash) VALUES (?, ?, ?)";
-$stmt = $mysqli->stmt_init();
-
-if(!$stmt->prepare($sql))
-{
-  die("SQL Error: " . $mysqli->error);
-}
-
-$stmt->bind_param("sss", $_POST["username"], $_POST["email"], $password_hash);
-
-if($stmt->execute())
-{
-  header("Location: signup_success.php");
-  exit;
+    if ($check_error == 0) {
+        $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password' )";
+        mysqli_query($con, $sql);
+        header("Location: signup_success.php");
+        exit(); 
+    } 
+    else {
+        echo "error";
+    }
 }
 ?>

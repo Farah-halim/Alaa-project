@@ -1,64 +1,51 @@
 <?php
-$is_invalid = false;
+session_start();
+include("database.php");
 
-if($_SERVER["REQUEST_METHOD"] === "POST")
-{
-  $mysqli = require __DIR__ . "/database.php";
-  $sql = sprintf("SELECT * FROM user WHERE email = '%s'", $mysqli->real_escape_string($_POST["email"]));
-  $result = $mysqli->query($sql);
-  $user = $result->fetch_assoc();
+if (isset($_POST['email'], $_POST['password'])) {
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
 
-  if($user)
-  {
-    if(password_verify($_POST["password"], $user["password_hash"]))
-    {
-      session_start();
-      session_regenerate_id();
-      $_SESSION["user_id"] = $user["id"];
-      header("Location: home.php");
-      exit;
+    $sql = "SELECT email, password FROM user WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($con, $sql);
+
+    if ($result && mysqli_num_rows($result) == 1) {
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
+        header("Location: home.php");
+        exit();
+    } else {
+        echo "Incorrect email or password.";
     }
-  }
-  $is_invalid = true;
 }
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Login</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/login.css">
-
 </head>
 
 <body>
-  <?php 
-  if($is_invalid){
-    die(" Invalid Email or Password ") ;
-  }
- ?>
-
-  <div class="box">
-        <div class="container">
-                <div class="content">
-                    <h2>Login</h2>
-                    <form method="post">
-                        <input type="email" placeholder="Email" name="email" id="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
-                        <input type="password" placeholder="Password" name="password" id="password">
-                        <button type="submit" class="btn-contact"> Login </button>  
-                    </form>
-                    <a href="signup.php"> Click here to Sign up </a>
-
-                </div>
-                
-                <div class="form-photo">
-                    <img src="images/loading1.gif" alt="">
-                </div>
+<div class="box">
+    <div class="container">
+        <div class="content">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <input type="email" placeholder="Email" name="email" id="email" required>
+                <input type="password" placeholder="Password" name="password" id="password" required>
+                <button type="submit" class="btn-contact" name="submit" value="Login">Submit</button>
+            </form>
         </div>
-    </div> 
-  
+        <div class="form-photo">
+            <img src="images/loading1.gif" alt="">
+        </div>
+    </div>
+    <a href="signup.php"> Click here to Sign up </a>
+</div>
+
 </body>
 </html>
