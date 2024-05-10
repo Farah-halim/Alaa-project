@@ -5,9 +5,8 @@ $image = "";
 $dbname = "product_db";
 
 $conn = new mysqli($host, $name, $image, $dbname);
-
 if(!$conn)
 {
-  die("Connection Failed");
+  die("connection failed:".mysqli_connect_error());
 }
 ?>

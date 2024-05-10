@@ -12,14 +12,12 @@
     <div class="container">
         <div class="content">
             <h2> Sign UP </h2>
-
             <form action="process_signup.php" method="POST"> 
                 <input type="text" placeholder="Username" name="username" required>
                 <input type="email" placeholder="Email" name="email" required>
                 <input type="password" placeholder="Password" id="password" name="password" required>
                 <input type="password" placeholder="Confirm Password" id="confirm_password" name="confirm_password" required>
                 <button type="submit" class="btn-contact" name="submit"> Sumbit </button>  
-
             </form>
         </div>
         
