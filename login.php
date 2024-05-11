@@ -13,8 +13,8 @@ if (isset($_POST['email'], $_POST['password'])) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         header("Location: home.php");
-        exit();
-    } else {
+    } 
+    else {
         echo "Incorrect email or password.";
     }
 }
@@ -39,12 +39,13 @@ if (isset($_POST['email'], $_POST['password'])) {
                 <input type="password" placeholder="Password" name="password" id="password" required>
                 <button type="submit" class="btn-contact" name="submit" value="Login">Submit</button>
             </form>
+            <a href="signup.php"> Click here to Register .. </a>
+
         </div>
         <div class="form-photo">
             <img src="images/loading1.gif" alt="">
         </div>
     </div>
-    <a href="signup.php"> Click here to Sign up </a>
 </div>
 
 </body>

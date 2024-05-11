@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
 
     if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
-        echo "You should fill them out";
+        echo "You cant skip anything empty";
         $check_error = 1;
     }
 
