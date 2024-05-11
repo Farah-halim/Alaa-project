@@ -83,7 +83,7 @@ if(isset($_POST['add'])) {
             <td><?php echo $row['name']; ?></td>
             <td>$<?php echo $row['price']; ?></td>
             <td>
-                  <form action="delete.php" method="get">
+                  <form action="edit.php" method="get">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                         <button class="edit" name="edit"> Edit </button>
                   </form>
