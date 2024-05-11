@@ -25,7 +25,6 @@ if(isset($_POST['add'])) {
         else {
             echo 'Could not add the product';
         }
-
         mysqli_stmt_close($insert); // Close the prepared statement
     }
 }
@@ -41,16 +40,16 @@ if(isset($_POST['add'])) {
 
 </head>
 <body>
-<div class="banner">
-      <nav>
-            <ul>
-                  <li> <a href="website.html"> Home</a> </li>
-                  <li> <a href="about.html"> About </a> </li>
-                  <li> <a href="contact.html"> Contact Us </a> </li>
-            </ul>
-            <a href="logout.php" class="out">Log Out</a>
-      </nav>
-</div>
+      <div class="banner">
+            <nav>
+                  <ul>
+                        <li> <a href="website.html"> Home</a> </li>
+                        <li> <a href="about.html"> About </a> </li>
+                        <li> <a href="contact.html"> Contact Us </a> </li>
+                  </ul>
+                  <a href="logout.php" class="out">Log Out</a>
+            </nav>
+      </div>
 
       <div class="container">
             <div class="admin-product-form-container">
@@ -65,35 +64,38 @@ if(isset($_POST['add'])) {
       </div>
 
       <div class="product-display">
-    <h1>Product Details</h1>
-    <table class="product-display-table">
-        <thead>
-            <tr>
-                <th>Product Image</th>
-                <th>Product Name</th>
-                <th>Product Price</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <?php 
-        $select = mysqli_query($conn, "SELECT * FROM product");
-        while($row = mysqli_fetch_assoc($select)) {
+            <h1>Product Details</h1>
+            <table class="product-table">
+                  <thead>
+                        <tr>
+                              <th>Product Image</th>
+                              <th>Product Name</th>
+                              <th>Product Price</th>
+                              <th>Action</th>
+                        </tr>
+                  </thead>
+<?php 
+      $select = mysqli_query($conn, "SELECT * FROM product");
+      while($row = mysqli_fetch_assoc($select)) {
         ?>
         <tr>
-            <td><img src="<?php echo $row['image']; ?>" height="100" alt=""></td>
+            <td> <img src="<?php echo $row['image']; ?>" height="100" alt=""></td>
             <td><?php echo $row['name']; ?></td>
-            <td>$<?php echo $row['price']; ?>/-</td>
+            <td>$<?php echo $row['price']; ?></td>
             <td>
-                <button class="edit"><a href="edit.php"> Edit </a> </button>
-                <form action="delete.php" method="get">
-                    <!-- Add a hidden input field to store the product ID -->
-                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                    <button class="delete" name="delete"> Delete </button>
-                </form>
+                  <form action="delete.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <button class="edit" name="edit"> Edit </button>
+                  </form>
+                  
+                  <form action="delete.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <button class="delete" name="delete"> Delete </button>
+                  </form>
             </td>
-        </tr>
-        <?php } ?>
-    </table>
+      </tr>
+      <?php } ?>
+</table>
 </div>
 </body>
 </html>
