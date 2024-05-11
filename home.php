@@ -9,7 +9,7 @@ if(isset($_POST['add'])) {
     $folder = 'images/' . $image_name; // Specify the complete path where you want to save the image
     
     if(empty($name) || empty($price) || empty($image_name)) { // Check for empty image name
-        echo 'Please fill out all fields';
+        echo 'You cant skip anything';
     } 
     else {
         // Prepare the SQL statement using prepared statements to prevent SQL injection
@@ -51,7 +51,7 @@ if(isset($_POST['add'])) {
             </nav>
       </div>
 
-      <div class="container">
+     <div class="container">
             <div class="admin-product-form-container">
                   <form action="home.php" method="post" enctype="multipart/form-data">
                         <h3> Add a new product</h3>
@@ -65,9 +65,10 @@ if(isset($_POST['add'])) {
 
       <div class="product-display">
             <h1>Product Details</h1>
-            <table class="product-table">
+            <table class="product-table" border="1">
                   <thead>
                         <tr>
+                              <th>ID</th>
                               <th>Product Image</th>
                               <th>Product Name</th>
                               <th>Product Price</th>
@@ -76,12 +77,14 @@ if(isset($_POST['add'])) {
                   </thead>
 <?php 
       $select = mysqli_query($conn, "SELECT * FROM product");
-      while($row = mysqli_fetch_assoc($select)) {
+
+      while($row = mysqli_fetch_assoc($select)) {  # retrive data as an array
         ?>
         <tr>
-            <td> <img src="<?php echo $row['image']; ?>" height="100" alt=""></td>
-            <td><?php echo $row['name']; ?></td>
-            <td>$<?php echo $row['price']; ?></td>
+            <td> <?php echo $row['id']; ?>  </td>
+            <td> <img src=" <?php echo $row['image']; ?>"  height="100" alt=""></td>
+            <td> <?php echo $row['name']; ?>  </td>
+            <td> $ <?php echo $row['price']; ?> </td>
             <td>
                   <form action="edit.php" method="get">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
@@ -92,9 +95,11 @@ if(isset($_POST['add'])) {
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                         <button class="delete" name="delete"> Delete </button>
                   </form>
+                  
             </td>
       </tr>
-      <?php } ?>
+      <?php 
+} ?>
 </table>
 </div>
 </body>

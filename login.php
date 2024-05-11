@@ -1,15 +1,18 @@
 <?php
-session_start();
 include("database.php");
+
+if (!isset($_SESSION)){
+    session_start();
+}
 
 if (isset($_POST['email'], $_POST['password'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $sql = "SELECT email, password FROM user WHERE email='$email' AND password='$password'";
+    $sql = "SELECT email, password FROM user WHERE email='$email' AND password='$password' ";
     $result = mysqli_query($con, $sql);
 
-    if ($result && mysqli_num_rows($result) == 1) {
+    if ($result == 1) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         header("Location: home.php");
@@ -37,7 +40,7 @@ if (isset($_POST['email'], $_POST['password'])) {
             <form action="login.php" method="post">
                 <input type="email" placeholder="Email" name="email" id="email" required>
                 <input type="password" placeholder="Password" name="password" id="password" required>
-                <button type="submit" class="btn-contact" name="submit" value="Login">Submit</button>
+                <button type="submit" class="btn-contact" name="submit" > Submit </button>
             </form>
             <a href="signup.php"> Click here to Register .. </a>
 
