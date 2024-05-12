@@ -1,5 +1,5 @@
 <?php
-include("database.php");
+include("user_connection.php");
 
 if (!isset($_SESSION)){
     session_start();
@@ -9,10 +9,10 @@ if (isset($_POST['email'], $_POST['password'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $sql = "SELECT email, password FROM user WHERE email='$email' AND password='$password' ";
+    $sql = "SELECT email, password FROM user WHERE email = '$email' AND password = '$password' ";
     $result = mysqli_query($con, $sql);
 
-    if ($result == 1) {
+    if ($result) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         header("Location: home.php");

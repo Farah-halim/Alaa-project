@@ -10,7 +10,8 @@
 <body>
   <img src="images/robot.gif">
     <div class="text"> 
-        <p>Congrats !!<br> You are signed up successfully. <br> So You can now <a href="login.php"> Login .. </a> </p>
+        <p>Congrats !!<br> You are signed up successfully. 
+        <br> So You can now   <a href="login.php">  Login ..  </a>   </p>
     </div>
 </body>
 </html>

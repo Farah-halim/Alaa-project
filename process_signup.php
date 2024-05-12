@@ -1,5 +1,5 @@
 <?php
-include("database.php");
+include("user_connection.php");
 $check_error = 0;
 
 if ( isset($_POST['submit']) ) {
@@ -27,7 +27,6 @@ if ( isset($_POST['submit']) ) {
         $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password' )";
         mysqli_query($con, $sql);
         header("Location: signup_success.php");
-        exit(); 
     } 
     else {
         echo "error";
