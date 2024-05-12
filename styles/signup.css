@@ -1,11 +1,10 @@
-.box {
+.box{
     width: 73%;
     margin: auto;
-    margin-top: 100px;
+    margin-top:100px;
     background: rgba(255, 255, 255, 0);
 }
-
-.box h2 {
+.box h2{
     font-family: 'Ubuntu', sans-serif;
     margin-top: 10px;
     line-height: 40px;
@@ -14,54 +13,56 @@
     color: #1875d2;
     text-align: center;
 }
-
-.content {
+.content{
     padding: 0 15px;
     border-top: 1px solid #1875d2b7;
     border-left: 1px solid #1875d2b7;
     border-bottom: 1px solid #1875d2b7;
 }
-
-.container {
-    position: relative;
+.container{
     display: flex;
 }
 
-.form-photo {
+.form-photo{
     display: grid;
     width: 80%;
     align-items: center;
 }
-
-.form-photo img {
+.form-photo img{
     width: 90%;
 }
 
+.box input{
+    margin-bottom: 10px;
+    padding: 17px 10px;
+    width: 80%;
+    display: inline-block;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #dcd7e278;
+    border: 1px solid #f0f4f878;
+
+}
 .box input:hover {
     border: 1px solid rgb(0 143 211);
     transition: 0.5s;
 }
-
 .sumbit {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left:180px;
+    font-size: 20px;
+    color: #fff;
+    background: rgba(0, 144, 211, 0.719);
+    font-weight: 600;
+    border: 1px solid rgb(0, 144, 211, 0.719);
     cursor: pointer;
-    border-radius: 10px;
-}
-
-.signup:hover {
-    background-color: #45a049;
-}
-
-
-a {
-    text-decoration: none;
-    color: #1875d2;
+} 
+.sumbit:hover{
+    background-color: #ffffff;
+    color: rgb(0, 144, 211, 0.719);
+    transition: 0.9s ;
 }
