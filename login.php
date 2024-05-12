@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT email, password FROM user WHERE email='$email' AND password='$password' ";
     $result = mysqli_query($con, $sql);
     
-    if (mysqli_num_rows($result)==1) {
+    if (mysqli_num_rows($result)) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         header("Location: index1.php");
