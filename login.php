@@ -1,10 +1,6 @@
 <?php
 include("user_connection.php");
 
-if (!isset($_SESSION)){
-    session_start();
-}
-
 if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);

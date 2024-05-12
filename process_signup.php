@@ -1,5 +1,10 @@
 <?php
 include("user_connection.php");
+
+if (!isset($_SESSION)){
+    session_start();
+}
+
 $check_error = 0;
 
 if ( isset($_POST['submit']) ) {
