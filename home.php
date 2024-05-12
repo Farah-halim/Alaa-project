@@ -3,7 +3,6 @@ include "product_connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,13 +43,14 @@ include "product_connection.php";
 <?php 
       $select = mysqli_query($conn, "SELECT * FROM product");
 
-      while($row = mysqli_fetch_assoc($select)) { 
+while($row = mysqli_fetch_assoc($select)) { 
         ?>
-        <tr>
-            <td> <?php echo $row ['id']; ?>  </td>
+      <tr>
+            <td>     <?php echo $row ['id']; ?>  </td>
             <td> <img src=" <?php echo $row ['image']; ?>"  height="100" ></td>
-            <td> <?php echo $row ['name']; ?>  </td>
-            <td> $ <?php echo $row ['price']; ?> </td>
+            <td>    <?php echo $row ['name']; ?>  </td>
+            <td> $  <?php echo $row ['price']; ?> </td>
+
             <td>
                   <form action="edit.php" method="get">
                         <input type="hidden" name="id" value="<?php echo $row ['id']; ?>">
@@ -64,7 +64,7 @@ include "product_connection.php";
                   
             </td>
       </tr>
-       <?php 
+<?php 
 } ?>
 </table>
 </div>

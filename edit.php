@@ -5,6 +5,7 @@ if(isset($_POST['edit'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
+
     $update_query = "UPDATE product SET name='$name', price='$price' WHERE id='$id' ";
     $result = mysqli_query($conn, $update_query);
     
@@ -37,8 +38,8 @@ else {
         <form action="" method="post">
             <h3>Edit Product</h3>
             <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
-            <input type="text" placeholder="Product Name" name="name" value="<?php echo $product['name']; ?>" class="box">
-            <input type="number" placeholder="Product Price" name="price" value="<?php echo $product['price']; ?>" class="box">
+            <input type="text" placeholder="Product Name" name="name" value="<?php echo $product['name']; ?>"  class="box">
+            <input type="number" placeholder="Product Price" name="price" value="<?php echo $product['price']; ?>"  class="box">
             <input type="submit" class="btn" name="edit" value="Save">
             <a href="home.php" class="btn"> Cancel </a>
         </form>
