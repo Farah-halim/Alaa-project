@@ -5,14 +5,24 @@ if (!isset($_SESSION)){
     session_start();
 }
 
-if (isset($_POST['email'], $_POST['password'])) {
+if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
+    $error = array();
+    
+    if(empty($email)){
+        array_push($error,"email is required");
+    }
 
-    $sql = "SELECT email, password FROM user WHERE email = '$email' AND password = '$password' ";
+    if(empty($password)){
+        array_push($error,"password is required");
+    }
+
+    if ((count($error)==0)){
+    $sql = "SELECT email, password FROM user WHERE email='$email' AND password='$password' ";
     $result = mysqli_query($con, $sql);
-
-    if ($result) {
+    
+    if (mysqli_num_rows($result)==1) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         header("Location: index1.php");
@@ -20,6 +30,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     else {
         echo "Incorrect email or password.";
     }
+}
 }
 ?>
 

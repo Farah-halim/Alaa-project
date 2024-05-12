@@ -8,16 +8,15 @@
 </head>
 <body>
 <div class="banner">
-             <nav>
-                   <p>SHOP FOR YOU</p>
-                  <ul>
-                         <li> <a href="index1.php"> Home</a> </li>
-                         <li> <a href="product.php"> Our Products</a> </li>
-
-                   </ul>
+            <nav>
+                <p>SHOP FOR YOU</p>
+                <ul>
+                    <li> <a href="index1.php"> Home</a> </li>
+                    <li> <a href="product.php"> Our Products</a> </li>
+                </ul>
                    <a href="logout.php" class="out">Log Out</a>
-             </nav>
-       </div>
+            </nav>
+</div>
 
 <p class="welcome">Welcome !!</p>
     <p class="paragraph">

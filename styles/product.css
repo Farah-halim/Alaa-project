@@ -63,6 +63,8 @@ nav ul li a:hover , .banner nav p:hover {
    width: 100%;
    border-spacing: 20px;
    text-align: center;
+   text-decoration:none;
+
 }
   
 .product-display thead tr th{
