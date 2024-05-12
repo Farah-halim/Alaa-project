@@ -17,15 +17,16 @@ include "product_connection.php";
 </head>
 
 <body>
-      <div class="banner">
+<div class="banner">
             <nav>
-                  <ul>
-                        <li> <a href="index1.php"> Home</a> </li>
-                        <li> <a href="product.php"> our products </a> </li>
-                  </ul>
-                  <a href="logout.php" class="out">Log Out</a>
+                <p>SHOP FOR YOU</p>
+                <ul>
+                    <li> <a href="index1.php"> Home</a> </li>
+                    <li> <a href="product.php"> Our Products</a> </li>
+                </ul>
+                   <a href="logout.php" class="out">Log Out</a>
             </nav>
-      </div>
+</div>
 
       <div class="product-display">
              <h1>Our Products</h1>

@@ -5,6 +5,7 @@ body{
    letter-spacing: 1.3px;
    background-color: rgb(255, 255, 255);
 }
+
 .banner{
    height: 57px;
    width: 100%;
@@ -57,7 +58,6 @@ nav ul li a:hover , .banner nav p:hover {
   color: aliceblue;
   font-size: 20px;
 }
-
 .product-table{
    table-layout: fixed;
    width: 100%;
