@@ -25,7 +25,7 @@
          from electronics and fashion to homeware <br>and groceries. Browse top brands and hidden gems, 
          all from <br>the comfort of your couch. Enjoy secure payment options,<br> fast delivery to your doorstep,
         and a hassle-free return policy.<br> Start exploring today and discover the joy of online shopping!</p>
-        <a href="home.php" class="link">Go To Our Products</a>
+        <a href="product.php" class="link">Go To Our Products</a>
 
     <div class="image">
         <img src="images/home_page.jpg" alt="image" width=700 height=400 >
