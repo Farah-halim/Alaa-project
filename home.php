@@ -34,6 +34,7 @@ include "product_connection.php";
              <table class="product-table" >
                   <thead>
                         <tr>
+                              <th> <u>Product ID</u></th>
                               <th> <u>Product Image</u></th>
                                <th><u>Product Name</u></th>
                                <th><u>Product Price</u></th>
