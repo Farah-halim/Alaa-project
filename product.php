@@ -8,7 +8,7 @@ include "product_connection.php";
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HOME</title>
-        <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/product.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -20,9 +20,8 @@ include "product_connection.php";
       <div class="banner">
             <nav>
                   <ul>
-                        <li> <a href="website.html"> Home</a> </li>
-                        <li> <a href="about.html"> About </a> </li>
-                        <li> <a href="contact.html"> Contact Us </a> </li>
+                        <li> <a href="index1.php"> Home</a> </li>
+                        <li> <a href="product.php"> our products </a> </li>
                   </ul>
                   <a href="logout.php" class="out">Log Out</a>
             </nav>

@@ -15,7 +15,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     if ($result) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
-        header("Location: home.php");
+        header("Location: index1.php");
     } 
     else {
         echo "Incorrect email or password.";

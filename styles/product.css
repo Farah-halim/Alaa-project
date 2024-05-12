@@ -30,24 +30,23 @@ nav ul li a:hover , .banner nav p:hover {
    color: #9DD9F3;
    transition: 0.5s;
 }
+
 .out{
    width: 90px;
    height: 30px;
    cursor: pointer;
    text-decoration: none;
-    background-color: red;
-    color: white; 
-    padding: 2px; 
-    margin-top: 10px;
-    border: none; 
-    border-radius: 5px; 
-    font-size: 20px;
-    font-weight: bold;   
-
-   
+   background-color: red;
+   color: white; 
+   padding: 2px; 
+   margin-top: 10px;
+   border: none; 
+   border-radius: 5px; 
+   font-size: 20px;
+   font-weight: bold;   
 }
-.banner nav p{
 
+.banner nav p{
   margin-left: 3%;
   margin-right: 50%;
   margin-top: auto;
@@ -57,38 +56,37 @@ nav ul li a:hover , .banner nav p:hover {
   font-style: italic;
   color: aliceblue;
   font-size: 20px;
- 
-     }
-  .product-table{
-        table-layout: fixed;
-        width: 100%;
-        border-spacing: 20px;
-        text-align: center;
-        
-     }
+}
+
+.product-table{
+   table-layout: fixed;
+   width: 100%;
+   border-spacing: 20px;
+   text-align: center;
+}
   
-  .product-display thead tr th{
-     background-color: #77C3EC;
-     opacity: 0.7;
-     border-radius: 15px;
-     font-size: 20px;
-  }
-  .product-display thead tr td{
-     background-color: #ded4d4 ;
-     opacity: 0.7;
-     border-radius: 15px;
-     font-size: 15px;
-  }
-  .product-display h1{
-     margin-left: 1%;
-     font-family: "Roboto Mono", monospace;
-  }
+.product-display thead tr th{
+   background-color: #77C3EC; 
+   opacity: 0.7; 
+   border-radius: 15px;
+   font-size: 20px;
+}
+.product-display thead tr td{
+   background-color: #ded4d4 ;
+   opacity: 0.7;
+   border-radius: 15px;
+   font-size: 15px;
+}
+.product-display h1{
+   margin-left: 1%;
+   font-family: "Roboto Mono", monospace;
+}
 .product-display thead tr td:hover{
   box-shadow: 5px 5px grey;
-       }
+}
 .admin-product-form-container h3{
-     margin-left: 1%;
-     font-family: "Roboto Mono", monospace;
+   margin-left: 1%;
+  font-family: "Roboto Mono", monospace;
 }
 .btn,.box{
   margin-left: 1%;
