@@ -19,7 +19,7 @@
              </nav>
        </div>
 
-<p class="welcome">Welcome User !!</p>
+<p class="welcome">Welcome !!</p>
     <p class="paragraph">
         Welcome to a world of convenience and endless possibilities! <br>
         Our online shopping website offers a vast selection of products <br> across all categories,
