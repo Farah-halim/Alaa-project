@@ -1,6 +1,11 @@
 <?php
 include "product_connection.php";
 
+$id = $_GET['id'];
+$select_query = "SELECT * FROM product WHERE id='$id'";
+$result = mysqli_query($conn, $select_query);
+$data = mysqli_fetch_assoc($result);
+
 if(isset($_POST['edit'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
@@ -16,12 +21,7 @@ if(isset($_POST['edit'])) {
         echo 'Error updating product';
     }
 } 
-else {
-    $id = $_GET['id'];
-    $select_query = "SELECT * FROM product WHERE id='$id'";
-    $result = mysqli_query($conn, $select_query);
-    $data = mysqli_fetch_assoc($result);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
